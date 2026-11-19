@@ -644,45 +644,24 @@ if isinstance(checkpoint, dict) and "epoch" in checkpoint:
     </div>
     """
 
-st.sidebar.markdown(
-    f"""
-    <div class="sidebar-info">
-        <div class="sidebar-info-title">MODEL CONFIGURATION</div>
 
-        <div class="sidebar-info-row">
-            <span class="sidebar-info-label">Architecture</span>
-            <span class="sidebar-info-value">U-Net</span>
-        </div>
+st.sidebar.markdown("---")
+st.sidebar.markdown("### MODEL CONFIGURATION")
 
-        <div class="sidebar-info-row">
-            <span class="sidebar-info-label">Input Channels</span>
-            <span class="sidebar-info-value">14</span>
-        </div>
+st.sidebar.markdown("**Architecture:** U-Net")
+st.sidebar.markdown("**Input Channels:** 14")
+st.sidebar.markdown("**Resolution:** 128 × 128")
+st.sidebar.markdown(f"**Compute Device:** {DEVICE}")
 
-        <div class="sidebar-info-row">
-            <span class="sidebar-info-label">Resolution</span>
-            <span class="sidebar-info-value">128 × 128</span>
-        </div>
+# Display best epoch if available
+if best_epoch_html:
+    st.sidebar.caption("Best epoch information available in model training results.")
 
-        <div class="sidebar-info-row">
-            <span class="sidebar-info-label">Compute Device</span>
-            <span class="sidebar-info-value">{DEVICE}</span>
-        </div>
-
-        {best_epoch_html}
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-st.sidebar.markdown("""
-<div class="sidebar-status">
-    ● MODEL LOADED
-</div>
-""", unsafe_allow_html=True)
+st.sidebar.success("● MODEL LOADED")
 
 st.sidebar.divider()
 st.sidebar.caption("LANDSLIDEGUARD AI · ACADEMIC PROJECT")
+
 
 
 # =========================================================
