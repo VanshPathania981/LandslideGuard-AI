@@ -1,0 +1,20 @@
+
+# Python virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+.streamlit/secrets.toml
+
+# Generated prediction data
+data/predictions/*
+data/history/*.json
+
+# Temporary files
+*.log
+.DS_Store
